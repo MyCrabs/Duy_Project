@@ -1,0 +1,72 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Upload ảnh để nhận diện rau củ</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+      
+      div {
+        max-width: 500px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      h1 {
+        color: #333;
+        margin-top: 0;
+      }
+      
+      form {
+        margin-top: 20px;
+      }
+      
+      input[type="text"], input[type="file"] {
+        width: 100%;
+        height: 40px;
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+      
+      input[type="submit"] {
+        width: 100%;
+        height: 40px;
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Nhập URL của ảnh để nhận diện rau củ</h1>
+      <form action="{{ url_for('upload_file_url') }}" method="post">
+        <input type="text" name="url" placeholder="Dán URL của ảnh vào đây">
+        <input type="submit" value="Nhận diện">
+      </form>
+    </div>
+
+    <div>
+      <h1>Tải lên ảnh để nhận diện rau củ</h1>
+      <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Nhận diện">
+      </form>
+    </div>
+  </body>
+</html>
